@@ -1,9 +1,9 @@
 import {
   ArcRotateCamera,
   Engine,
-  HemisphericLight,
+  HemisphericLight, Material,
   Mesh,
-  MeshBuilder,
+  MeshBuilder, MultiMaterial,
   Scene,
   SceneLoader,
   Vector3
@@ -22,13 +22,15 @@ function createScene(): Scene {
 
   const sphere: Mesh = MeshBuilder.CreateSphere("sphere", {diameter: 0.01}, scene);
 
-  SceneLoader.ImportMesh(['Building1'], "./assets/", "building1.gltf", scene,
+  SceneLoader.ImportMesh(['Building1'], "./assets/", "building1.babylon", scene,
       (meshes, particleSystems, skeletons) => {
         camera.target = meshes[0].position;
         const material = meshes[0].material;
-        if (material) {
-          material.backFaceCulling = false;
-        }
+        (material as MultiMaterial).getChildren().forEach((childMat) => {
+          if (childMat) {
+            childMat.transparencyMode = Material.MATERIAL_OPAQUE;
+          }
+        });
       });
 
   return scene;
