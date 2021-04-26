@@ -25,7 +25,10 @@ function createScene(): Scene {
   SceneLoader.ImportMesh(['Building1'], "./assets/", "building1.babylon", scene,
       (meshes, particleSystems, skeletons) => {
         camera.target = meshes[0].position;
-        meshes[0].material.backFaceCulling = false;
+        const material = meshes[0].material;
+        if (material) {
+          material.backFaceCulling = false;
+        }
       });
 
   return scene;
