@@ -199,7 +199,7 @@
       "useGlossinessFromSpecularMapAlpha": false,
       "name": "Material #36",
       "id": "d277ed36-2ab6-4ef0-b701-1e6391bfcd55",
-      "backFaceCulling": true,
+      "backFaceCulling": false,
       "wireframe": false,
       "alpha": 1.0,
       "alphaMode": 2,
