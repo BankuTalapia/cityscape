@@ -22,12 +22,12 @@ function createScene(): Scene {
 
   const sphere: Mesh = MeshBuilder.CreateSphere("sphere", {diameter: 0.01}, scene);
 
-  return scene;
-
   SceneLoader.ImportMesh(['Building1'], "./assets/", "building1.gltf", scene,
       (meshes, particleSystems, skeletons) => {
         camera.target = meshes[0].position;
       });
+
+  return scene;
 }
 
 const scene: Scene = createScene();
