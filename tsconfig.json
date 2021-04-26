@@ -23,7 +23,8 @@
 
     "types": [
       "babylonjs",
-      "babylonjs-materials"
+      "babylonjs-materials",
+      "babylonjs-loaders"
     ]
   },
   "files": [
