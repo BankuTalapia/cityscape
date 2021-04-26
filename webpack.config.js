@@ -1,4 +1,6 @@
 const path = require("path");
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -14,7 +16,12 @@ module.exports = {
     devtool: 'source-map',
     mode: 'development',
     plugins: [
-
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {from: './src/index.html'}
+            ]
+        })
     ],
     module: {
         rules: [{
