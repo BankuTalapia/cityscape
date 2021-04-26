@@ -1,5 +1,5 @@
 import {
-  ArcRotateCamera,
+  ArcRotateCamera, Camera,
   Engine,
   HemisphericLight, Material,
   Mesh,
@@ -16,6 +16,7 @@ function createScene(): Scene {
   const scene: Scene = new Scene(engine);
 
   const camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
+  camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
   camera.attachControl(canvas, true);
 
   const light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
