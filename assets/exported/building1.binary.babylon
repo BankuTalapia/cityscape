@@ -1,0 +1,167 @@
+{
+  "producer": {
+    "name": "3dsmax",
+    "version": "2017",
+    "exporter_version": "20210401.5",
+    "file": "building1.babylon"
+  },
+  "autoClear": true,
+  "clearColor": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "ambientColor": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "fogMode": 0,
+  "fogColor": null,
+  "fogStart": 0.0,
+  "fogEnd": 0.0,
+  "fogDensity": 0.0,
+  "gravity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "physicsEngine": null,
+  "physicsEnabled": false,
+  "physicsGravity": null,
+  "geometries": null,
+  "meshes": [
+    {
+      "materialId": null,
+      "geometryId": null,
+      "isEnabled": true,
+      "isVisible": true,
+      "positions": null,
+      "normals": null,
+      "tangents": null,
+      "uvs": null,
+      "uvs2": null,
+      "uvs3": null,
+      "uvs4": null,
+      "uvs5": null,
+      "uvs6": null,
+      "colors": null,
+      "hasVertexAlpha": true,
+      "matricesIndices": null,
+      "matricesWeights": null,
+      "matricesIndicesExtra": null,
+      "matricesWeightsExtra": null,
+      "indices": null,
+      "receiveShadows": true,
+      "infiniteDistance": false,
+      "billboardMode": 0,
+      "visibility": 1.0,
+      "subMeshes": null,
+      "instances": null,
+      "skeletonId": -1,
+      "numBoneInfluencers": 4,
+      "applyFog": true,
+      "lodMeshIds": null,
+      "lodDistances": null,
+      "lodCoverages": null,
+      "rotation": null,
+      "scaling": [
+        0.9608639,
+        0.4347345,
+        1.0
+      ],
+      "rotationQuaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "actions": null,
+      "checkCollisions": false,
+      "pickable": false,
+      "showBoundingBox": false,
+      "showSubMeshesBoundingBox": false,
+      "alphaIndex": 1000,
+      "physicsImpostor": 0,
+      "physicsMass": 0.0,
+      "physicsFriction": 0.0,
+      "physicsRestitution": 0.0,
+      "name": "Building1",
+      "id": "7381d646-5bc5-4efa-8c1a-01c2deff8092",
+      "parentId": null,
+      "position": [
+        0.0,
+        -0.00594509,
+        -0.02640838
+      ],
+      "animations": null,
+      "autoAnimate": false,
+      "autoAnimateFrom": 0,
+      "autoAnimateTo": 0,
+      "autoAnimateLoop": false,
+      "metadata": null,
+      "boundingBoxMinimum": [
+        -0.348185271,
+        -0.00702237,
+        -0.316330433
+      ],
+      "boundingBoxMaximum": [
+        0.348185271,
+        1.72524476,
+        0.2691472
+      ],
+      "delayLoadingFile": "building1.Building1.7381d646-5bc5-4efa-8c1a-01c2deff8092.babylonbinarymeshdata",
+      "hasColors": true,
+      "hasUVs": true,
+      "_binaryInfo": {
+        "positionsAttrDesc": {
+          "count": 5418,
+          "stride": 3,
+          "offset": 0,
+          "dataType": 1
+        },
+        "colorsAttrDesc": {
+          "count": 7224,
+          "stride": 3,
+          "offset": 21672,
+          "dataType": 1
+        },
+        "normalsAttrDesc": {
+          "count": 5418,
+          "stride": 3,
+          "offset": 50568,
+          "dataType": 1
+        },
+        "uvsAttrDesc": {
+          "count": 3612,
+          "stride": 2,
+          "offset": 72240,
+          "dataType": 1
+        },
+        "indicesAttrDesc": {
+          "count": 1806,
+          "stride": 1,
+          "offset": 86688,
+          "dataType": 0
+        },
+        "subMeshesAttrDesc": {
+          "count": 1,
+          "stride": 5,
+          "offset": 93912,
+          "dataType": 0
+        }
+      }
+    }
+  ],
+  "sounds": [],
+  "materials": [],
+  "multiMaterials": [],
+  "particleSystems": null,
+  "lensFlareSystems": null,
+  "shadowGenerators": [],
+  "skeletons": [],
+  "actions": null,
+  "metadata": null,
+  "workerCollisions": false,
+  "useDelayedTextureLoading": true
+}
