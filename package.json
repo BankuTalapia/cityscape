@@ -1,0 +1,36 @@
+{
+  "name": "cityscape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BankuTalapia/cityscape.git"
+  },
+  "author": "Banku",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BankuTalapia/cityscape/issues"
+  },
+  "homepage": "https://github.com/BankuTalapia/cityscape#readme",
+  "devDependencies": {
+    "@babylonjs/core": "^4.2.0",
+    "@babylonjs/gui": "^4.2.0",
+    "@babylonjs/inspector": "^4.2.0",
+    "@babylonjs/loaders": "^4.2.0",
+    "@babylonjs/materials": "^4.2.0",
+    "@babylonjs/post-processes": "^4.2.0",
+    "@babylonjs/procedural-textures": "^4.2.0",
+    "@babylonjs/serializers": "^4.2.0",
+    "babylonjs": "^4.2.0",
+    "babylonjs-materials": "^4.2.0",
+    "ts-loader": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  }
+}
