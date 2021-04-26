@@ -1,4 +1,13 @@
-import { ArcRotateCamera, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from '@babylonjs/core';
+import {
+  ArcRotateCamera,
+  Engine,
+  HemisphericLight,
+  Mesh,
+  MeshBuilder,
+  Scene,
+  SceneLoader,
+  Vector3
+} from '@babylonjs/core';
 
 const canvas: any = document.getElementById("renderCanvas");
 const engine: Engine = new Engine(canvas, true);
@@ -11,12 +20,13 @@ function createScene(): Scene {
 
   const light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
 
-  const sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
+  const sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
 
   return scene;
 }
 
 const scene: Scene = createScene();
+SceneLoader.ImportMesh(['Building1'],"./assets/", "building1.gltf", scene);
 
 engine.runRenderLoop(() => {
   scene.render();

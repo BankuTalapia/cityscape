@@ -19,7 +19,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [
-                {from: './src/index.html'}
+                {from: './src/index.html'},
+                {from: './assets/exported/**/*', to: './assets/[name][ext]'}
             ]
         })
     ],
