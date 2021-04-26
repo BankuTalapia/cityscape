@@ -20,14 +20,17 @@ function createScene(): Scene {
 
   const light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
 
-  const sphere: Mesh = MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  const sphere: Mesh = MeshBuilder.CreateSphere("sphere", {diameter: 0.01}, scene);
 
   return scene;
+
+  SceneLoader.ImportMesh(['Building1'], "./assets/", "building1.gltf", scene,
+      (meshes, particleSystems, skeletons) => {
+        camera.target = meshes[0].position;
+      });
 }
 
 const scene: Scene = createScene();
-SceneLoader.ImportMesh(['Building1'],"./assets/", "building1.gltf", scene);
-
 engine.runRenderLoop(() => {
   scene.render();
 });
