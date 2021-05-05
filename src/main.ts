@@ -2,7 +2,7 @@ import {
   AbstractMesh,
   ArcRotateCamera, Camera, Color3, Color4, DirectionalLight, DynamicTexture,
   Engine, FreeCamera,
-  HemisphericLight, Material,
+  HemisphericLight, LensRenderingPipeline, Material,
   Mesh,
   MeshBuilder, MultiMaterial,
   Scene,
@@ -44,14 +44,14 @@ function createGrid(scene: Scene) {
 
 }
 
-function createCamera(scene: Scene) {
+function createCamera(scene: Scene): ArcRotateCamera {
   const camera = new ArcRotateCamera('camera', 5 * Math.PI / 4, 0.7 * Math.PI / 2, 100,
       new Vector3(0, 0, 0), scene);
 
   const engine = scene.getEngine();
   const renderRect = engine.getRenderingCanvasClientRect();
   if (!renderRect) {
-    return;
+    throw new Error('No render rect');
   }
   camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
 
@@ -98,6 +98,8 @@ function createCamera(scene: Scene) {
   // var camera = new FreeCamera("Camera", cameraPosition, scene);
   // camera.attachControl(canvas, true);
   // camera.setTarget(Vector3.Zero());
+
+  return camera;
 }
 
 
@@ -205,10 +207,27 @@ function createGeometry(scene: Scene) {
       });
 }
 
+function createShader(scene: Scene, camera: Camera) {
+  var lensEffect = new LensRenderingPipeline('lens', {
+    edge_blur: 0.0,
+    chromatic_aberration: 0.0,
+    distortion: 1.0,
+    dof_focus_distance: 7,
+    dof_aperture: 0.05,			// set this very high for tilt-shift effect
+    grain_amount: 1.0,
+    dof_pentagon: true,
+    dof_gain: 20.0,
+    dof_threshold: 1.0,
+    dof_darken: 0
+  }, scene, 1.0, [camera]);
+}
+
 function createScene(): Scene {
   const scene: Scene = new Scene(engine);
 
-  createCamera(scene);
+  let camera = createCamera(scene);
+
+  createShader(scene, camera);
 
   const light1: DirectionalLight = new DirectionalLight("light1", new Vector3(1.0, -0.3, 1.0).normalize(), scene);
   light1.intensity = 1.0;
